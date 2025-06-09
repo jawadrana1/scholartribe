@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>ScholarTribe - Fund Your Studies Abroad</title>
+        <link rel="stylesheet" href="style.css">
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+        <script src="main.js" defer></script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <div class="logo-wrapper">
+                    <img src="Img/logo.png" alt="ScholarTribe Logo" class="logo-img">
+                </div>
+                <span class="logo-text">SCHOLARTRIBE</span>
+            </div>
+            <nav class="nav">
+                <button class="nav-btn" onclick="filterScholarships('ca')">Pk to CA</button>
+                <button class="nav-btn" onclick="filterScholarships('us')">Pk to US</button>
+                <button class="nav-btn" onclick="filterScholarships('italy')">Pk to Italy</button>
+                <button class="nav-btn" onclick="filterScholarships('uk')">Pk to UK</button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Fund Your Studies Abroad with Scholarships</h1>
+                    <p>Find and apply for scholarships to study abroad, no application fees required</p>
+                </div>
+                <div class="hero-image">
+                    <img src="Img\hero bg.png?height=400&width=600" alt="Graduate student with Canadian flag" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scholarships Section -->
+    <section class="scholarships">
+        <div class="container">
+            <div class="filter-controls" style="text-align: center; margin-bottom: 2rem;">
+                <button class="filter-btn active" onclick="showAllScholarships()">All Countries</button>
+            </div>
+            <div class="scholarships-grid" id="scholarships-grid">
+                <!-- Scholarships will be loaded here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact">
+        <div class="container">
+            <div class="contact-form-wrapper">
+                <h2>Contact Us</h2>
+                <form class="contact-form" id="contact-form">
+                    <div class="form-row">
+                        <input type="text" name="name" placeholder="Name" required>
+                        <input type="email" name="email" placeholder="Email" required>
+                    </div>
+                    <select name="program" required>
+                        <option value="">What are you applying for?</option>
+                        <option value="undergraduate">Undergraduate Program</option>
+                        <option value="graduate">Graduate Program</option>
+                        <option value="phd">PhD Program</option>
+                        <option value="research">Research Position</option>
+                    </select>
+                    <textarea name="message" placeholder="Message" rows="4" required></textarea>
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Loading Modal -->
+    <div class="modal" id="loading-modal">
+        <div class="modal-content">
+            <div class="loader"></div>
+            <p>Scraping scholarship data...</p>
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div class="modal" id="success-modal">
+        <div class="modal-content">
+            <h3>Thank You!</h3>
+            <p>Your message has been sent successfully. We will get back to you soon.</p>
+            <button onclick="closeSuccessModal()" class="apply-btn">Close</button>
+        </div>
+    </div>
+
+</body>
+</html>
